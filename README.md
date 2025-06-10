@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# 📝 Realtime Notes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern frontend project for collaborative note-taking built with **React**, **Vite**, **TypeScript**, **Tailwind CSS**, and **Socket.IO**. Users can **create**, **edit**, and **collaborate in real-time** on notes. Includes full **JWT authentication**, **route protection**, responsive UI, and smooth UX with custom toasts and validations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔐 **Authentication**:
+  - JWT-based login and signup pages
+  - Protected routes for authenticated users only
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📓 **Notes System**:
+  - Create, list, edit, and view notes
+  - Real-time collaboration via WebSocket (Socket.IO)
+  - Single component handles both creation and editing
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- 🌐 **Live Collaboration**:
+  - Seamless updates across clients in real time
+  - WebSocket integration handled via Context API
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 🎨 **UI/UX**:
+  - Tailwind CSS for styling
+  - ShadCN UI components
+  - Fully responsive design
+  - Custom toast system for feedback
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- 🧠 **State Management & Validation**:
+  - Global state managed with Redux
+  - Form validation using **Yup** and **Zod**
+  
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🛠️ Tech Stack
+
+| Tech             | Purpose                        |
+|------------------|--------------------------------|
+| React            | UI Framework                   |
+| Vite             | Fast development server + build|
+| TypeScript       | Type safety                    |
+| Tailwind CSS     | Utility-first styling          |
+| Redux            | State management               |
+| Socket.IO        | Real-time collaboration        |
+| Context API      | WebSocket management           |
+| Yup & Zod        | Form validation                |
+| ShadCN UI        | Pre-built components           |
+
+---
+
+## 📂 Project Structure
+
+src/
+├── assets/ # Static files
+├── components/ # Reusable UI components
+├── features/ # Redux slices and logic
+├── hooks/ # Custom React hooks
+├── pages/ # Route-level components (Login, Signup, Notes)
+├── services/ # API calls and socket setup
+├── store/ # Redux store config
+├── utils/ # Utility functions
+├── validation/ # Yup/Zod schemas
+├── App.tsx # Root component
+├── main.tsx # App entry
+└── index.css # Global styles
+
+
+
+---
+
+## 🧪 Setup Instructions
+
+### 1. Clone the Repo
+
+git clone https://github.com/your-username/realtime-notes-app.git
+cd realtime-notes-app
+
+### 2. Install Dependencies
+
+npm install
+
+### 3 . Start Development Server
+
+npm run dev
+
+
+
+
+
